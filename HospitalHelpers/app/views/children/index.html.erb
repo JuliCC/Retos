@@ -1,0 +1,51 @@
+<h1>Lista de pacientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primer nombre</th>
+      <th>Segundo nombre</th>
+      <th>Apellidos</th>
+      <th>Identificación</th>
+      <th>Sexo</th>
+      <th>Fecha de nacimiento</th>
+      <th>Edad</th>
+      <th>En caso de emergencia llamar a:</th>
+      <th>Tipo de sangre</th>
+      <th>RH</th>
+      <th>Vacuna hepb</th>
+      <th>Vacuna hep a</th>
+      <th>Vacuna var</th>
+      <th>Cancer</th>
+      <th>Otro</th>
+      <th>Diabetes</th>
+      <th>Enfermedades o tratamientos</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+ 	<tbody>
+		<% @children.each do |child| %>
+		<tr>
+			<td><%= child.first_name %></td>
+			<td><%= child.middle_name %></td>
+			<td><%= child.lastname %></td>
+			<td><%= child.identification %></td>
+      <td><%= child.sex %></td>
+      <td><%= child.birth_date.strftime("%B %d %Y") %></td>
+			<td><%= child.age %> Años </td>
+      <td><%= child.name_parient %></td>
+			<td><%= child.blood_type %></td>
+			<td><%= child.rh %></td>
+			<td><%= child.hepb %></td>
+      <td><%= child.hepa %></td>
+      <td><%= child.var %></td>
+      <td><%= child.cancer %></td>
+      <td><%= child.diabetes %></td>
+      <td><%= child.other %></td>
+			<td><%= child.diseases %></td>
+			<td><%= link_to "Eliminar", child_path(child), method: :delete, data: {confirm: "Estas seguro?"} %></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>

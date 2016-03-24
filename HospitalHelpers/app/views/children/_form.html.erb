@@ -1,0 +1,99 @@
+<%= form_tag({controller:"children", action:"create"}, method:"post") %>
+
+<div>
+  <%= label_tag :first_name, 'Primer nombre' %>
+  <%= text_field_tag :first_name, "", placeholder: 'Escriba su primer nombre' %>
+</div>
+
+<div>
+  <%= label_tag :middle_name, 'Segundo nombre' %>
+  <%= text_field_tag :middle_name, "", placeholder: 'Escriba su segundo nombre' %>
+</div>
+
+<div>
+  <%= label_tag :lastname, 'Apellidos' %>
+  <%= text_field_tag :lastname, "", placeholder: 'Escriba sus apellidos' %>
+</div>
+
+<div>
+  <%= label_tag :identification, 'T.I o Registro civil' %>
+  <%= text_field_tag :identification, "", placeholder: 'Escriba el número de identificacion del paciente' %>
+</div>
+
+<div>
+  <%= label_tag :birth_date, 'Fecha de nacimiento' %>
+  <%= date_field_tag :birth_date, "" %>
+</div>
+
+<div>
+  <%= label_tag :sex, 'Sexo' %><br>
+  <%= label_tag :sex_male, 'Hombre' %>
+  <%= radio_button_tag :sex, 'Masculino' %>
+  <%= label_tag :sex_female, 'Mujer' %>
+  <%= radio_button_tag :sex, 'Femenino' %>
+</div>
+
+<div>
+  <%= label_tag :age, 'Edad' %>
+  <%= text_field_tag :age, "", placeholder: 'Escriba la edad del paciente' %> 
+</div>
+
+<div>
+  <%= label_tag :name_parient, 'En caso de emergencia llamar a:' %>
+  <%= text_field_tag :name_parient, "", placeholder: 'Nombre completo' %>
+</div>
+
+<div>
+  <%= label_tag :blood_type, 'Grupo sanguíneo' %>
+  <%= select_tag(:blood_type, options_for_select([['A','A'],['B','B'],['AB','AB'],['O','O']])) %>
+</div>
+
+<div>
+  <%= label_tag :rh, 'RH' %>
+  <%= select_tag(:rh, options_for_select([['+', '+'],['-','-']])) %>
+</div>
+
+<div>
+  <%= label_tag :hepb, 'Vacuna hepb' %>
+  <%= select_tag(:hepb, options_for_select([['Sí', 'Sí'],['No','No']])) %>
+</div>
+
+<div>
+  <%= label_tag :hepa, 'Vacuna hepa' %>
+  <%= select_tag(:hepa, options_for_select([['Sí', 'Sí'],['No','No']])) %>
+</div>
+
+<div>
+  <%= label_tag :var, 'Vacuna var' %>
+  <%= select_tag(:var, options_for_select([['Sí', 'Sí'],['No','No']])) %>
+</div>
+
+<div>
+  <%= label_tag(:cancer, "Ha sufrido alguna vez cancer?") %>
+  <%= label_tag :cancer_yes, "Si" %>
+  <%= radio_button_tag(:cancer, "Sí") %>
+
+  <%= label_tag :cancer_no, "No" %>
+  <%= radio_button_tag(:cancer, "No") %>
+</div> 
+
+<div>
+  <%= label_tag(:diabetes, "Ha sufrido alguna vez diabetes?") %>
+  <%= label_tag :diabetes_yes, "Si" %>
+  <%= radio_button_tag(:diabetes, "Sí") %>
+
+  <%= label_tag :diabetes_no, "No" %>
+  <%= radio_button_tag(:diabetes, "No") %>
+</div> 
+
+<div>
+  <%= label_tag(:other, 'Otra. Cual?') %>
+  <%= text_field_tag :other %>
+</div>
+
+<div>
+  <%= label_tag :diseases, "Enfermedades o tratamientos actuales" %><br>
+  <%= text_area_tag(:diseases, " ", placeholder: "Describa brevemente las enfermedades padecidas", size: "24x6") %>
+</div>
+
+<%= submit_tag("Guardar") %>

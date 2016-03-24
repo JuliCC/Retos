@@ -1,0 +1,49 @@
+<h1>Lista de pacientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primer nombre</th>
+      <th>Segundo nombre</th>
+      <th>Apellidos</th>
+      <th>Identificación</th>
+      <th>Fecha de nacimiento</th>
+      <th>Edad</th>
+      <th>En caso de emergencia llamar a:</th>
+      <th>Estado civil</th>
+      <th>Tipo de sangre</th>
+      <th>RH</th>
+      <th># hijos</th>
+      <th># abortos</th>
+      <th>Cancer de ovarios</th>
+      <th>Alzheimer</th>
+      <th>Diabetes</th>
+      <th>Enfermedades o tratamientos</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+ 	<tbody>
+		<% @women.each do |woman| %>
+		<tr>
+			<td><%= woman.first_name %></td>
+			<td><%= woman.middle_name %></td>
+			<td><%= woman.lastname %></td>
+			<td><%= woman.identification %></td>
+      <td><%= woman.birth_date.strftime("%B %d %Y") %></td>
+			<td><%= woman.age %> Años </td>
+      <td><%= woman.name_parient %></td>
+			<td><%= woman.civil_status%></td>
+			<td><%= woman.blood_type %></td>
+			<td><%= woman.rh %></td>
+			<td><%= woman.num_children %></td>
+      <td><%= woman.num_abortions %></td>
+      <td><%= woman.ovarian_cancer %></td>
+      <td><%= woman.alzheimer %></td>
+      <td><%= woman.diabetes %></td>
+			<td><%= woman.diseases %></td>
+			<td><%= link_to "Eliminar", woman_path(woman), method: :delete, data: {confirm: "Estas seguro?"} %></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>
