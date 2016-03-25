@@ -1,0 +1,15 @@
+<%= form_for [@tower, @apartment] do |a| %>
+
+<div>
+	<%= a.label :name %>
+	<%= a.text_field :name %>
+</div>
+
+<div>
+	<%= a.label :floor %>
+	<%= a.text_field :floor %>
+</div>
+
+<%= a.submit "Crear apartamento" %>
+
+<% end %>

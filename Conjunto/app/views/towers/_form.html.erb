@@ -1,0 +1,18 @@
+
+<%= form_for tower do |t| %>
+
+<div>
+	<%= t.label :name %>
+	<%= t.text_field :name %>
+</div>
+
+<div>
+	<%= t.label :vigilant %>
+	<%= t.text_field :vigilant %>
+</div>
+
+<%= t.submit "Crear torre" %>
+
+<% end %>
+
+<%= link_to "Volver a inicio", root_path %>

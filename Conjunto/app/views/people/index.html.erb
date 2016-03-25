@@ -1,0 +1,19 @@
+<h1>Lista de residentes</h1>
+
+<%= link_to "Agregar residente", new_tower_apartment_person_path %>
+
+<ol>
+	<% @people.each do |person| %>
+	<li>
+		<%= person.name %>
+		<%= person.di %>
+		<%= link_to "Editar", edit_tower_apartment_person_path(@tower, @apartment, person) %>
+		<%= link_to "Eliminar", tower_apartment_people_path(@tower, @apartment, person), method: :delete, data: {confirm: "Estás seguro?"} %>
+		
+	</li>
+
+	<% end %>
+
+</ol>
+
+<%= link_to "Volver a inicio", root_path %>

@@ -1,0 +1,18 @@
+
+<%= form_for [@tower, @apartment, @person] do |p| %>
+
+<div>
+	<%= p.label :name %>
+	<%= p.text_field :name %>
+</div>
+
+<div>
+	<%= p.label :di %>
+	<%= p.text_field :id %>
+</div>
+
+<%= p.submit "Crear residente" %>
+
+<% end %>
+
+<%= link_to "Volver a inicio", root_path %>

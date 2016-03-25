@@ -1,0 +1,20 @@
+<h1>Conjunto residencial</h1>
+
+<%= link_to "Agregar torre", new_tower_path %>
+
+<ol>
+	<% @towers.each do |tower| %>
+	<li>
+		<%= tower.name %>
+		<%= tower.vigilant %>
+		<%= link_to "Editar", edit_tower_path(tower) %>
+		<%= link_to "Eliminar", tower_path(tower), method: :delete, data: {confirm: "Estás seguro?"} %>
+		<%= link_to 'Ver apartamentos', tower_apartments_path(tower) %>
+	</li>
+
+	<% end %>
+
+</ol>
+
+
+
